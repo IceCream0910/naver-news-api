@@ -7,7 +7,7 @@ const client_secret = "uiieuA1ni1";
 
 app.get('/search/news', function (req, res) {
     res.header("Access-Control-Allow-Origin", "*");
-    var api_url = 'https://openapi.naver.com/v1/search/news?display=30&query=' + encodeURI(req.query.query); // json 결과
+    var api_url = 'https://openapi.naver.com/v1/search/news?display=15&sort=sim&query=' + encodeURI(req.query.query); // json 결과
     var request = require('request');
     var options = {
         url: api_url,
@@ -44,7 +44,7 @@ app.get('/trend', function (req, res) {
 
 
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
 });
