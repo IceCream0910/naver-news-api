@@ -6,6 +6,7 @@ const client_secret = "uiieuA1ni1";
 
 
 app.get('/search/news', function (req, res) {
+    res.header("Access-Control-Allow-Origin", "*");
     var api_url = 'https://openapi.naver.com/v1/search/news?display=30&query=' + encodeURI(req.query.query); // json 결과
     var request = require('request');
     var options = {
@@ -24,7 +25,7 @@ app.get('/search/news', function (req, res) {
 });
 
 app.get('/trend', function (req, res) {
-
+    res.header("Access-Control-Allow-Origin", "*");
     var api_url = 'https://www.bigkinds.or.kr/api/categoryKeywords.do' // json 결과
     var request = require('request');
     var options = {
